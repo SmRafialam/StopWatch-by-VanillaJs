@@ -39,8 +39,8 @@ function startTimerOn(){
     if(h < 10){
       h = "0" + h;
     }
-  document.getElementById("stopwatch").innerHTML = h + ':' + m + ':' + s;
-  setTimeout("startTimerOn()",1000);
+  document.getElementById("stopwatch").innerHTML = "<h1>" + h + ':' + m + ':' + s + "</h1>";
+  setTimeout("startTimerOn()",500);
 }
 }
 
@@ -52,6 +52,10 @@ function stopTimer(){
   }
 }
 
-function pauseTimer(){
-  
+function resetTimer(){
+  document.getElementById("stopwatch").innerHTML="<h1>" + "00:00:00" + "</h1>";
+  stopTime = true;
+  m = 0;
+  s = 0;
+  h = 0;
 }
