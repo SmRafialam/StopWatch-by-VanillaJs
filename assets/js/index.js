@@ -59,3 +59,13 @@ function resetTimer(){
   s = 0;
   h = 0;
 }
+function resumeTimer(){
+  document.getElementById("stopwatch").innerHTML="<h1>" + "00:00:00" + "</h1>";
+  start = new Date();
+    timerId = window.setTimeout(function () {
+      remaining = delay;
+      resume();
+      callback();
+    }, remaining);
+  };
+  this.resume = resume;
