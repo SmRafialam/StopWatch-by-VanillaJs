@@ -59,13 +59,17 @@ function resetTimer(){
   s = 0;
   h = 0;
 }
+
+function pauseTimer(){
+  btnPause.style.display = "none";
+  btnResume.style.display = "block";
+  clearInterval(stopTimer());
+}
+
 function resumeTimer(){
-  document.getElementById("stopwatch").innerHTML="<h1>" + "00:00:00" + "</h1>";
-  start = new Date();
-    timerId = window.setTimeout(function () {
-      remaining = delay;
-      resume();
-      callback();
-    }, remaining);
+  btnResume.onclick = () => {
+    btnResume.style.display = "none";
+    btnPause.style.display = "block";
+    startTimer();
   };
-  this.resume = resume;
+}
